@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Nook - Mood Based Book recommender</title>
+    <link rel="shortcut icon" href="iconImg.png" type="png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="heroText">
+        <h1 class="tagesschrift-regular">Find your<br />next comfort read.</h1>
+        <p style="color: white; margin-top: 1rem">
+          <i>Curated just for your mood.</i>
+        </p>
+        <button class="findBook" id="findBookBtn">Find My Book</button>
+      </div>
+    </div>
+    <div class="preference" id="preference">
+      <h3 class="tagesschrift-regular">Tell us what you are in mood for:</h3>
+      <div class="choices">
+        <div class="choiceCard">
+          <div class="choicehead">Genre</div>
+          <div class="pills" id="genre">
+            <button class="genre pill">Fantasy</button>
+            <button class="genre pill">Mystery</button>
+            <button class="genre pill">Romance</button>
+            <button class="genre pill">Thriller</button>
+            <button class="genre pill">Young adult</button>
+            <button class="genre pill">Classics</button>
+          </div>
+        </div>
+
+        <div class="choiceCard">
+          <div class="choicehead">Reading Styles</div>
+          <div class="pills" id="readingStyle">
+            <button class="readingStyle pill">Cozy</button>
+            <button class="readingStyle pill">Dark</button>
+            <button class="readingStyle pill">Emotional</button>
+            <button class="readingStyle pill">Adventurous</button>
+            <button class="readingStyle pill">Light and Fun</button>
+          </div>
+        </div>
+
+        <div class="choiceCard">
+          <div class="choicehead">Author Type</div>
+          <div class="pills" id="authorType">
+            <button class="authorType pill">Classic</button>
+            <button class="authorType pill">Modern</button>
+            <button class="authorType pill">Popular</button>
+            <button class="authorType pill">Any</button>
+          </div>
+        </div>
+      </div>
+      <button class="recommend" id="recommendBtn">Recommend</button>
+      <p id="preferenceMessage" class="prefMessage hidden"></p>
+    </div>
+
+    <div class="recommendationArea">
+      <div class="loaderContainer hidden">
+        <div class="loader">
+          <div class="flame">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <defs>
+                <mask id="clipping">
+                  <polygon
+                    points="0,0 100,0 100,100 0,100"
+                    fill="black"
+                  ></polygon>
+                  <polygon points="25,25 75,25 50,75" fill="white"></polygon>
+                  <polygon points="50,25 75,75 25,75" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                  <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                </mask>
+              </defs>
+            </svg>
+            <div class="box"></div>
+          </div>
+
+          <p class="loaderText">Matching you with the perfect book…</p>
+        </div>
+      </div>
+
+      <div class="results hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
