@@ -3,63 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Nook - Mood Based Book recommender</title>
-    <link rel="shortcut icon" href="iconImg.png" type="png" />
+    <title>Book Nook — Mood-based book recommender</title>
+    <link rel="shortcut icon" href="iconImg.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="hero">
       <div class="heroText">
-        <h1 class="tagesschrift-regular">Find your<br />next comfort read.</h1>
-        <p style="color: white; margin-top: 1rem">
-          <i>Curated just for your mood.</i>
-        </p>
-        <button class="findBook" id="findBookBtn">Find My Book</button>
+        <span class="eyebrow">a quiet corner for the right book</span>
+        <h1>Find your<br />next comfort read</h1>
+        <p class="heroSub">Tell us the mood. We'll pull three from the shelf.</p>
+        <button class="findBook" id="findBookBtn">Find my book</button>
       </div>
+      <div class="heroScrim"></div>
     </div>
+
+    <div class="shelfDivider" aria-hidden="true">
+      <svg viewBox="0 0 1200 40" preserveAspectRatio="none">
+        <path d="M0,8 Q600,0 1200,8 L1200,26 Q600,34 0,26 Z" fill="currentColor" />
+      </svg>
+    </div>
+
     <div class="preference" id="preference">
-      <h3 class="tagesschrift-regular">Tell us what you are in mood for:</h3>
+      <h3>What are you in the mood for?</h3>
+      <p class="preferenceSub">Pick one card from each shelf.</p>
+
       <div class="choices">
         <div class="choiceCard">
           <div class="choicehead">Genre</div>
           <div class="pills" id="genre">
-            <button class="genre pill">Fantasy</button>
-            <button class="genre pill">Mystery</button>
-            <button class="genre pill">Romance</button>
-            <button class="genre pill">Thriller</button>
-            <button class="genre pill">Young adult</button>
-            <button class="genre pill">Classics</button>
+            <button class="genre pill" aria-pressed="false">Fantasy</button>
+            <button class="genre pill" aria-pressed="false">Mystery</button>
+            <button class="genre pill" aria-pressed="false">Romance</button>
+            <button class="genre pill" aria-pressed="false">Thriller</button>
+            <button class="genre pill" aria-pressed="false">Young adult</button>
+            <button class="genre pill" aria-pressed="false">Classics</button>
           </div>
         </div>
 
         <div class="choiceCard">
-          <div class="choicehead">Reading Styles</div>
+          <div class="choicehead">Reading Style</div>
           <div class="pills" id="readingStyle">
-            <button class="readingStyle pill">Cozy</button>
-            <button class="readingStyle pill">Dark</button>
-            <button class="readingStyle pill">Emotional</button>
-            <button class="readingStyle pill">Adventurous</button>
-            <button class="readingStyle pill">Light and Fun</button>
+            <button class="readingStyle pill" aria-pressed="false">Cozy</button>
+            <button class="readingStyle pill" aria-pressed="false">Dark</button>
+            <button class="readingStyle pill" aria-pressed="false">Emotional</button>
+            <button class="readingStyle pill" aria-pressed="false">Adventurous</button>
+            <button class="readingStyle pill" aria-pressed="false">Light and fun</button>
           </div>
         </div>
 
         <div class="choiceCard">
           <div class="choicehead">Author Type</div>
           <div class="pills" id="authorType">
-            <button class="authorType pill">Classic</button>
-            <button class="authorType pill">Modern</button>
-            <button class="authorType pill">Popular</button>
-            <button class="authorType pill">Any</button>
+            <button class="authorType pill" aria-pressed="false">Classic</button>
+            <button class="authorType pill" aria-pressed="false">Modern</button>
+            <button class="authorType pill" aria-pressed="false">Popular</button>
+            <button class="authorType pill" aria-pressed="false">Any</button>
           </div>
         </div>
       </div>
-      <button class="recommend" id="recommendBtn">Recommend</button>
+
+      <button class="recommend" id="recommendBtn">Reveal my books</button>
       <p id="preferenceMessage" class="prefMessage hidden"></p>
     </div>
 
@@ -70,10 +80,7 @@
             <svg width="100" height="100" viewBox="0 0 100 100">
               <defs>
                 <mask id="clipping">
-                  <polygon
-                    points="0,0 100,0 100,100 0,100"
-                    fill="black"
-                  ></polygon>
+                  <polygon points="0,0 100,0 100,100 0,100" fill="black"></polygon>
                   <polygon points="25,25 75,25 50,75" fill="white"></polygon>
                   <polygon points="50,25 75,75 25,75" fill="white"></polygon>
                   <polygon points="35,35 65,35 50,65" fill="white"></polygon>
@@ -85,13 +92,13 @@
             </svg>
             <div class="box"></div>
           </div>
-
           <p class="loaderText">Matching you with the perfect book…</p>
         </div>
       </div>
 
       <div class="results hidden"></div>
     </div>
+
 
     <script src="script.js"></script>
   </body>
